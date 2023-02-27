@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+:root {
+  /* fontes */
+  --ft-title:'Staatliches', cursive;
+  --ft-parag: 'Palanquin', sans-serif;
+
+
+  /* cores */
+  --color-bg: #8E9AAF;
+  --color-bgtitle:#CBC0D3;
+  --color-escuro:#4A4E69;
+  --color-main:#FEEAFA;
+
+  font-size: 62.5%;
+
+}
+
+.page {
+  background-color: var(--color-main);
+  
+}
+
+header {
+  background-color: var(--color-bg);
+  text-align: center;
+  font-family: var(--ft-title);
+  padding: 36px 0;
+}
+
+header h1 {
+  background: var(--color-bgtitle);
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 3.4rem;  
+  letter-spacing: 0.05rem;
+  color: #FFFFFF;
+
+  padding: 0.8rem;
+}
+
+header p {
+  display: none;
+}
+
+header img {
+  padding: 3.2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+  padding: 20px;
+}
+
+.texto-principal {
+  font-family: var(--ft-parag);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-align: center;
+  padding-top:1.4rem;
+  margin: 0 3.6rem;
+
+
+  color: #23053A;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 40px;
+}
+
+.card {
+  position: relative;
+  max-width: 320px;
+}
+
+.card img {
+  max-width: 320px;
+  width: 100%;
+}
+
+.card h2 {
+  font-weight: 400;
+  font-family: var(--ft-title);
+  color: #4A4E69;
+}
+
+.card h2 span {
+  border-radius: 2.8rem;
+  background-color: #FEEAFA;
+  font-size: 2rem;
+  padding: 0 2.4rem;
+  height: 3.5rem;
+  top: 15px;
+  right: 15px;
+  position: absolute;
+  
+  display: inline-flex;
+  align-items: center;
+}
+
+
+.card {
+  animation: downtotop 800ms 100ms backwards;
+}
+
+.card h2 span {
+  animation: topdown 800ms 400ms backwards;
+}
+
+.footer {
+  display: none;
+}
+
+@keyframes downtotop {
+  0% {
+    opacity: 0%;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0%;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    /* fontes */
+    --ft-title:'Staatliches', cursive;
+    --ft-parag: 'Palanquin', sans-serif;
+  
+  
+    /* cores */
+    --color-bg: #8E9AAF;
+    --color-bgtitle:#CBC0D3;
+    --color-escuro:#4A4E69;
+    --color-main:#FEEAFA;
+  
+    font-size: 62.5%;
+  }
+
+  .page {
+    display: flex;
+    height: 100vh;
+    gap: 100px;
+    background: #ffffff;
+  }
+
+  header {
+    height: 100vh;
+  }
+
+  header p {
+    display: block;
+  }
+
+  main {
+    background: #ffffff;
+    height: 100vh;
+  }
+
+  main p {
+    display: none;
+  }
+
+  .texto-principal {
+    color: #ffffff;
+    font-weight: 400;
+    height: 26.2rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    width: 27.5rem;
+    font-family: var(--ft-parag);
+  }
+
+  .cards {
+    display: grid;
+    grid-gap: 3.2rem;
+    grid-template-areas:
+    "A B F"
+    "D B E"
+    "D C E";
+    position: relative;
+  }
+
+  .cards div:nth-child(1) {
+    grid-area: A;
+    margin: 0;
+  }
+
+  .cards div:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards div:nth-child(3) {
+    grid-area: C;
+  }
+
+  .cards div:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cards div:nth-child(5) {
+    grid-area: E;
+  }
+
+  .cards div:nth-child(6) {
+    grid-area: F;
+  }
+  
+  .card img {
+    width: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .c150 {
+    height: 150px;
+    
+  }
+
+  .c350 {
+    height: 350px;
+  }
+
+.cards img {
+    transform: scale(1);
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.cards img:hover {
+  transform: scale(1.2);
+}
+
+.cards img h2 {
+    display: none;
+    padding: 0 2.4rem;
+    font-size: 2rem;
+    transition: all 2s;
+}
+
+.cards img:hover h2 {
+    display: block;
+    animation: top-down 0.5s ease backwards; 
+}
+
+.footer {
+    display: block;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--ft-parag);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.footer span {
+  font-weight: bold;
+}
+}
